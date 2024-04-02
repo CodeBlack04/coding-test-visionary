@@ -1,5 +1,3 @@
-Framework = Django | CSS = Tailwind | Rest-Framework = djangorestframework | Datavase = sqllite3
-
 # Project Name: Coding Test Visionary
 
 ## Introduction
@@ -8,11 +6,10 @@ This project utilizes Django as the web framework, Tailwind CSS for styling, and
 ## Setup Instructions
 
 ### Clone the Project
-
-**Setup instructions:**
-1. Clone the project and enter the directory.
+```bash
   git clone git@github.com:CodeBlack04/coding-test-visionary.git
   cd coding-test-visionary
+```
 2. Install virtualenv, create a virtual environment(env).
   pip install virtualenv
   python3 -m venv env

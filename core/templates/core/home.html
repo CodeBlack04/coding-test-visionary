@@ -81,7 +81,7 @@
                     <a href="{% url 'movies:detail' movie.id %}" class="w-full flex rounded-xl hover:scale-105 transition duration-300 ease-in-out">
 
                         {% if movie.image %}
-                        <div id="movie_{{ forloop.counter0 }}_image" class="w-60 h-80 rounded-xl overflow-hidden">
+                        <div id="movie_{{ forloop.counter0 }}_image" class="w-60 h-60 rounded-xl overflow-hidden">
                             <img src="{{ movie.image.url }}" alt="{{movie.name}}" class="w-full h-full object-cover">
                         </div>
                         {% else %}

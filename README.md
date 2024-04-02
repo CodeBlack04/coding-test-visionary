@@ -3,7 +3,7 @@
 ## Introduction
 This project utilizes Django as the web framework, Tailwind CSS for styling, Django Rest Framework for building RESTful APIs and postgreSQL for database.
 
-## Setup Instructions(Docker)
+## Setup Instructions (Docker)
 
 ### Install Docker-desktop
 
@@ -23,8 +23,8 @@ docker-compose build
 docker-compose up
 ```
 
-## Setup Instructions(Without Docker)
-
+## Setup Instructions (Without Docker)
+In this case sqllite3 is used for the database.
 ### Clone the Project
 ```bash
 git clone git@github.com:CodeBlack04/coding-test-visionary.git

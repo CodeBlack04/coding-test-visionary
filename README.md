@@ -3,6 +3,16 @@
 ## Introduction
 This project utilizes **Django** as the web framework, **TailwindCSS** for styling, **DjangoRestFramework** for building RESTful APIs and **postgreSQL** for database.
 
+## Credentials
+### Superuser:
+email: admin@admin.com
+pass: admin
+### Users:
+email: john_dae@gmail.com
+email: jone_dae@gmail.com
+..... ..... .... ....
+pass: abcdABCD1234
+
 ## Setup Instructions (Docker)
 
 ### 1. Install Docker-desktop

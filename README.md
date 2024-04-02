@@ -1,9 +1,29 @@
 # Project Name: Coding Test Visionary Tech Solutions (Completed)
 
 ## Introduction
-This project utilizes Django as the web framework, Tailwind CSS for styling, and Django Rest Framework for building RESTful APIs. Initially, SQLite3 was chosen as the database due to its simplicity and ease of setup within the virtual environment. However, for production, PostgreSQL is recommended, and instructions for setting up PostgreSQL are provided below.
+This project utilizes Django as the web framework, Tailwind CSS for styling, Django Rest Framework for building RESTful APIs and postgreSQL for database.
 
-## Setup Instructions
+## Setup Instructions(Docker)
+
+### Install Docker-desktop
+
+### Clone the Project
+```bash
+git clone git@github.com:CodeBlack04/coding-test-visionary.git
+cd coding-test-visionary
+```
+
+### Build the image
+```bash
+docker-compose build
+```
+
+### Run the container
+```
+docker-compose up
+```
+
+## Setup Instructions(Without Docker)
 
 ### Clone the Project
 ```bash

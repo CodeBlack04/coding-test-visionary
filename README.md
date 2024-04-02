@@ -6,11 +6,9 @@ This project utilizes Django as the web framework, Tailwind CSS for styling, and
 ## Setup Instructions
 
 ### Clone the Project
-``
+```bash
   git clone git@github.com:CodeBlack04/coding-test-visionary.git
-``
   cd coding-test-visionary
-``
 2. Install virtualenv, create a virtual environment(env).
   pip install virtualenv
   python3 -m venv env

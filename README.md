@@ -26,12 +26,15 @@ python manage.py runserver
 ```
 
 ## Database
-PostgreSQL was the preferred database to go but it requires setting up the database and user system-wide. I couldn't figure out a way to setup postgres in the virtual environment. As i wanted to keep all required configurations and packages in the virtual environment, thus default sqllite database was used.
+PostgreSQL was the recommended database, although it requires system-wide configuration of the database and user. I couldn't figure out how to set up Postgres in the virtual environment. As I wanted to preserve all essential setups and packages in the virtual environment, I utilised the default sqllite3 database.
 
-**Here is a description to setup postgreSQL database if required:**
-1. Deactivate the virtual environment:
+## Here is a description to setup postgreSQL database if required:
+### Deactivate the virtual environment:
+```bash
 deactivate
-2. Setup and configure postgreSQL:
+```
+### Setup and configure postgreSQL:
+```bash
 sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
 sudo -u postgres psql
 CREATE DATABASE test;
@@ -41,8 +44,9 @@ ALTER ROLE test SET default_transaction_isolation TO 'read committed';
 ALTER ROLE test SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE test TO test;
 \q
-
-3. Configure postgreSQL in settings.py:
+```
+### Configure postgreSQL in settings.py:
+```bash
    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -54,13 +58,15 @@ GRANT ALL PRIVILEGES ON DATABASE test TO test;
 
     }
 }
-
-4. Initialize the database:
+```
+### Initialize the database:
+```bash
    source env/bin/activate
    pip install psycopg2
    python manage.py makemigrations
    python manage.py migrate
-   python manage.py runserver 
+   python manage.py runserver
+```
 
 
   

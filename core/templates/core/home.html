@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block style %}
+<style>
+    .checkbox-button input[type='checkbox'] {
+        display: none;
+    }
+    
+    .checkbox-button label {
+        display: inline-block;
+        width: 100%;
+        margin: 5px;
+        background-color: rgb(75 85 99);
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .checkbox-button label.genre_types:hover {
+        background-color: rgb(17 24 39);
+    }
+
+    .checkbox-button label.rating_types:hover {
+        background-color: rgb(17 24 39);
+    }
+    
+    
+    .checkbox-button input[type='checkbox']:checked + label.genre_types {
+        background-color: rgb(17 24 39);
+    }
+
+    .checkbox-button input[type='checkbox']:checked + label.rating_types {
+        background-color: rgb(17 24 39);
+    }
+</style>
+    
+{% endblock %}
+
+{% block content %}
+<div class="w-3/5 mx-auto px-10 py-2 text-center">
+    <form method="get" action=".">
+        <input name="query" value="{{query}}" type="text" class="my-2 py-2 px-3 bg-cyan-800 rounded-full" placeholder="Seach movie">
+
+        <div class="checkbox-button flex flex-wrap gap-3 justify-center items-center mx-auto px-5 overflow-x-auto rounded-xl">
+            <p class="text-xl">Genres: </p>
+            {% for choice in form.genre_types %}
+                <div>
+                    {{ choice.tag }}
+                    <label for="id_genre_types_{{forloop.counter0}}" class="text-center genre_types">{{ choice.choice_label }}</label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="checkbox-button flex flex-wrap gap-3 justify-center items-center mx-auto px-5 overflow-x-auto rounded-xl">
+            <p class="text-xl">Ratings: </p>
+            {% for choice in form.rating_types %}
+                <div>
+                    {{ choice.tag }}
+                    <label for="id_rating_types_{{forloop.counter0}}" class="text-center rating_types">{{ choice.choice_label }}</label>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+    
+    <div class="my-3">
+        <a href="{% url 'core:home' %}" class="py-1 px-3 bg-emerald-600 rounded-full hover:bg-emerald-700 transition ease-in-out duration-300">Clear Filter</a>
+    </div>
+    
+</div>
+
+<div class="mt-6 py-12 bg-gray-700 rounded-xl shadow-lg">
+    <h1 class="mb-8 text-3xl font-semibold text-center">Movie List</h1>
+
+    <div class="flex flex-col px-12 justify-center items-center gap-5 p-4">
+        {% if movies %}
+            {% for movie in movies %}
+                    <a href="{% url 'movies:detail' movie.id %}" class="w-full flex rounded-xl hover:scale-105 transition duration-300 ease-in-out">
+
+                        {% if movie.image %}
+                        <div id="movie_{{ forloop.counter0 }}_image" class="w-60 h-80 rounded-xl overflow-hidden">
+                            <img src="{{ movie.image.url }}" alt="{{movie.name}}" class="w-full h-full object-cover">
+                        </div>
+                        {% else %}
+                        <div id="movie_{{ forloop.counter0 }}_image" class="w-60 h-60 bg-gray-800 rounded-xl flex items-center justify-center">
+                            <span class="text-gray-500">No image available</span>
+                        </div>
+                        {% endif %}
+
+
+                        <div class="p-6 w-full bg-cyan-800 space-y-3 rounded-xl hover:bg-cyan-900">
+                            <h2 class="text-2xl font-semibold text-cyan-500">{{ movie.name }}</h2>
+                            <p class="text-xl text-black">Genre: {{ movie.genre|upper }}</p>
+                            <p class="text-xl text-black">{{ movie.rating|upper }}</p>
+                            <p class="text-xl text-black">Release Date: {{ movie.release_date }}</p>
+                            <p class="text-xl text-black">Rating: {{ movie.average_rating }}</p>
+                        </div>
+
+                    </a>
+            {% endfor %}
+        {% else %}
+            <h2 class="text-center">No product found!!</h2>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

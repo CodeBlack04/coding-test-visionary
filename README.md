@@ -14,5 +14,8 @@ Framework = Django | CSS = Tailwind | Rest-Framework = djangorestframework | Dat
    python manage.py runserver
 
 **Database**
-  
+PostgreSQL was the preferred database to go but it requires setting up the database and user system-wide. I couldn't figure out a way to setup postgres in the virtual environment. As i wanted to keep all required configurations and packages in the virtual environment, thus default sqllite database was used.
+
+**Here is a description to setup postgreSQL database if required:**
+
   

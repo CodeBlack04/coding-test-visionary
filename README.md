@@ -25,6 +25,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
+## API (jsonresponse):
+#### Users: http://localhost:8000/api/users/
+#### Moviess: http://localhost:8000/api/movies/
+#### Ratings: http://localhost:8000/api/ratings/
+
 ## Database
 PostgreSQL was the recommended database, although it requires system-wide configuration of the database and user. I couldn't figure out how to set up Postgres in the virtual environment. As I wanted to preserve all essential setups and packages in the virtual environment, I utilised the default sqllite3 database.
 

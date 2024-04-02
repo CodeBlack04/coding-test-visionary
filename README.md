@@ -1,7 +1,7 @@
 # Project Name: Coding Test Visionary Tech Solutions (Completed)
 
 ## Introduction
-This project utilizes Django as the web framework, Tailwind CSS for styling, Django Rest Framework for building RESTful APIs and postgreSQL for database.
+This project utilizes **Django** as the web framework, **TailwindCSS** for styling, **DjangoRestFramework** for building RESTful APIs and **postgreSQL** for database.
 
 ## Setup Instructions (Docker)
 

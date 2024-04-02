@@ -5,43 +5,43 @@ This project utilizes Django as the web framework, Tailwind CSS for styling, Dja
 
 ## Setup Instructions (Docker)
 
-### Install Docker-desktop
+### 1. Install Docker-desktop
 
-### Clone the Project
+### 2. Clone the Project
 ```bash
 git clone git@github.com:CodeBlack04/coding-test-visionary.git
 cd coding-test-visionary
 ```
 
-### Build the image
+### 3. Build the image
 ```bash
 docker-compose build
 ```
 
-### Run the container
+### 4. Run the container
 ```
 docker-compose up
 ```
 
 ## Setup Instructions (Without Docker)
 In this case sqllite3 is used for the database.
-### Clone the Project
+### 1. Clone the Project
 ```bash
 git clone git@github.com:CodeBlack04/coding-test-visionary.git
 cd coding-test-visionary
 ```
-### Install virtualenv, create a virtual environment(env).
+### 2. Install virtualenv, create a virtual environment(env).
 ```bash
 pip install virtualenv
 python3 -m venv env
 ```
-### Activate the environment and install packages to the environment.
+### 3. Activate the environment and install packages to the environment.
 ```bash  
 source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Edit system.py
+### 4. Edit system.py
 ```bash
 DATABASES = {
     'default': {
@@ -51,7 +51,7 @@ DATABASES = {
 }
 ```
 
-### Activate the server:
+### 5. Activate the server:
 ```bash
 python manage.py runserver
 ```

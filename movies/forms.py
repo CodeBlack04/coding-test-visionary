@@ -7,7 +7,7 @@ INPUT_CLASSES = 'w-full mb-4 py-4 px-6 rounded-xl text-gray-800 border'
 class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
-        fields = ('name', 'genre', 'rating', 'release_date', 'description',)
+        fields = ('name', 'genre', 'rating', 'release_date', 'images', 'description',)
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': INPUT_CLASSES,
@@ -28,6 +28,10 @@ class MovieForm(forms.ModelForm):
                 'class': INPUT_CLASSES,
                 'placeholder': 'Release Date...',
                 'type': 'date'
+            }),
+
+            'image': forms.FileInput(attrs={
+                'class': INPUT_CLASSES,
             }),
 
             'description': forms.Textarea(attrs={

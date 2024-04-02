@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 AUTH_USER_MODEL = 'userauth.User'
 
 LOGIN_URL = '/userauth/login/'

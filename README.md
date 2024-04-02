@@ -40,6 +40,17 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+
+### Edit system.py
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
 ### Activate the server:
 ```bash
 python manage.py runserver

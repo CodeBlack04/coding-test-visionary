@@ -1,4 +1,4 @@
-# Project Name: Coding Test Visionary
+# Project Name: Coding Test Visionary Tech Solutions (Completed)
 
 ## Introduction
 This project utilizes Django as the web framework, Tailwind CSS for styling, and Django Rest Framework for building RESTful APIs. Initially, SQLite3 was chosen as the database due to its simplicity and ease of setup within the virtual environment. However, for production, PostgreSQL is recommended, and instructions for setting up PostgreSQL are provided below.
@@ -61,11 +61,11 @@ GRANT ALL PRIVILEGES ON DATABASE test TO test;
 ```
 ### Initialize the database:
 ```bash
-   source env/bin/activate
-   pip install psycopg2
-   python manage.py makemigrations
-   python manage.py migrate
-   python manage.py runserver
+source env/bin/activate
+pip install psycopg2
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
 ```
 
 

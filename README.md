@@ -41,7 +41,7 @@ deactivate
 ### Setup and configure postgreSQL:
 ```bash
 sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
-sudo -u postgres psql
+sudo su postgres psql
 CREATE DATABASE test;
 CREATE USER test WITH PASSWORD 'test';
 ALTER ROLE test SET client_encoding TO 'utf8';

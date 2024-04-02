@@ -20,6 +20,7 @@ class Movie(models.Model):
     rating = models.CharField(max_length=10, choices=RatingType.choices)
     release_date = models.DateField()
 
+    image = models.ImageField(upload_to= 'images/movies/', blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     created_by = models.ForeignKey(User, related_name='movies', blank=True, null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

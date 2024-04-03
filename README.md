@@ -113,6 +113,8 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-
-
+## Areas to improve
+### May add a check to avoid duplicate movie entries
+### May add a check for same user existance in _create_user
+### Password recovery and email support could be implemented but didn't seem necessary
   

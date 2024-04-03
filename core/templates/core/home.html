@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static movieextras %}
+
 {% block title %} {{title}} {% endblock %}
 
 {% block style %}
@@ -101,7 +103,7 @@
                             <p class="text-xl text-black">Genre: {{ movie.genre|upper }}</p>
                             <p class="text-xl text-black">{{ movie.rating|upper }}</p>
                             <p class="text-xl text-black">Release Date: {{ movie.release_date }}</p>
-                            <p class="text-xl text-black">Rating: {{ movie.average_rating }}</p>
+                            <p class="text-xl text-black">Rating: {{ movie.average_rating|stars|safe }} ({{ movie.average_rating }})</p>
                         </div>
 
                     </a>
